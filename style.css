@@ -73,3 +73,29 @@ input:focus {
     font-size: 90px;
     overflow: hidden;
 }
+
+
+@media (max-width: 900px) {
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-for-text {
+        display: none;
+    }
+
+    .container-for-conversion {
+        margin: 0%;
+    }
+
+    @media (orientation: portrait) {
+        .container-for-conversion {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+}
