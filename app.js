@@ -1,31 +1,26 @@
 // Fahrenheit to Celsius
-document.querySelector('input.fahrenheit-grades').addEventListener('keydown', fahrenheitToCelsius);
-document.querySelector('input.fahrenheit-grades').addEventListener('keydown', changeBackgroundColorFoCelsius);
+document.querySelector('input.fahrenheit-grades').addEventListener('input', fahrenheitToCelsius);
+// Celsius to Fahrenheit 
+document.querySelector('input.celsius-grades').addEventListener('input', celsiusToFahrenheit);
 
 function fahrenheitToCelsius (object) {
     const value = document.querySelector('input.fahrenheit-grades').value;
     const toCelsius = (value -32) * 0.5556;
     
-    document.querySelector('input.celsius-grades').value = toCelsius.toFixed(0);
-    
+    document.querySelector('input.celsius-grades').value = Math.round(toCelsius);
+    changeBackgroundColorFoCelsius();
 }
-
-
-// Celsius to Fahrenheit 
-document.querySelector('input.celsius-grades').addEventListener('keydown', celsiusToFahrenheit);
-document.querySelector('input.celsius-grades').addEventListener('keydown', changeBackgroundColorFoCelsius);
 
 function celsiusToFahrenheit (object) {
     const value = document.querySelector('input.celsius-grades').value;
     const toFahrenheit = (value * 1.8) + 32;
 
-    document.querySelector('input.fahrenheit-grades').value = toFahrenheit.toFixed(0);
-    
+    document.querySelector('input.fahrenheit-grades').value = Math.round(toFahrenheit);
+    changeBackgroundColorFoCelsius();
 }
 
-
 // Change the background color based on the celsius temperature
-function changeBackgroundColorFoCelsius (object) {
+function changeBackgroundColorFoCelsius () {
     const temperature = document.querySelector('input.celsius-grades').value;
     console.log(temperature);
     
